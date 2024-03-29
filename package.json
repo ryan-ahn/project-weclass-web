@@ -27,9 +27,6 @@
   "type": "module",
   "bin": "./bin/npm.js",
   "private": false,
-  "engines": {
-    "node": "v18.18.2"
-  },
   "scripts": {
     "start": "nuxt start",
     "build": "nuxt build",
