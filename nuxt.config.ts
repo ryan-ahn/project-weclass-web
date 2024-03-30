@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     },
   },
   alias: {
-    '@assets': fileURLToPath(new URL('./assets/', import.meta.url)),
+    '@constants': fileURLToPath(new URL('./constants/', import.meta.url)),
     '@components': fileURLToPath(new URL('./components/', import.meta.url)),
     '@containers': fileURLToPath(new URL('./containers/', import.meta.url)),
     '@interface': fileURLToPath(new URL('./interface/', import.meta.url)),
@@ -53,18 +53,18 @@ export default defineNuxtConfig({
         // Icons
         {
           rel: 'shortcut icon',
-          href: './logo.png',
+          href: './favicon.png',
         },
         {
           rel: 'apple-touch-icon',
           sizes: '192X192',
-          href: './logo.png',
+          href: './favicon.png',
         },
         {
           rel: 'icon',
           type: 'image/png',
           sizes: '32X32',
-          href: './logo.png',
+          href: './favicon.png',
         },
         // Fonts
         {

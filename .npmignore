@@ -1,9 +1,0 @@
-.idea
-.nuxt
-.tscache
-.DS_Store
-.git
-.gitignore
-node_modules/
-nuxt.config.ts
-package-lock.json

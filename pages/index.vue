@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import MainContainer from '@containers/main/index.vue';
-import { META_PAGE } from '@assets/data/meta';
+import { META_PAGE } from '@constants/data/meta';
 
 // Meta
 useHead({
@@ -32,3 +32,4 @@ definePageMeta({
   layout: 'default',
 });
 </script>
+constants/data/meta

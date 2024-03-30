@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { CONTENT_PAGE } from '@assets/data/content';
+import { CONTENT_PAGE } from '@constants/data/content';
 // variable
 const contentTitle = CONTENT_PAGE.fist.title;
 </script>
@@ -28,3 +28,4 @@ const contentTitle = CONTENT_PAGE.fist.title;
   }
 }
 </style>
+constants/data/content

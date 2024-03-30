@@ -15,8 +15,8 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@assets/*": [
-        "assets/*"
+      "@constants/*": [
+        "constants/*"
       ],
       "@components/*": [
         "components/*"

@@ -22,8 +22,8 @@
 </template>
 
 <script setup lang="ts">
-import { CONTENT_PAGE } from '@assets/data/content';
-import { BUTTON_MAIN } from '@assets/data/button';
+import { CONTENT_PAGE } from '@constants/data/content';
+import { BUTTON_MAIN } from '@constants/data/button';
 // Hooks
 const router = useRouter();
 // variable
@@ -66,3 +66,4 @@ const onClickRouteToStack = (path: string) => {
   gap: 10px;
 }
 </style>
+constants/data/contentconstants/data/button
