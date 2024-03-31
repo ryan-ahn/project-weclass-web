@@ -30,10 +30,10 @@ const {
 .button-wrapper {
   @include flexSet(center, center, row);
   @include boxSet(auto, auto, 30px);
-  padding: 12px 30px;
+  padding: 15px 35px;
   cursor: pointer;
   & > p {
-    @include fontSet(17px, 600, 22px);
+    @include fontSet(25px, 600, 32px);
     @include ellipsisSet(1, 22px);
   }
 }

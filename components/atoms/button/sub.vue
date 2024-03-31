@@ -1,5 +1,8 @@
 <template>
-  <button class="button-wrapper">
+  <button
+    class="button-wrapper"
+    @click="onClickFunction"
+  >
     <p>{{ text }}</p>
   </button>
 </template>
@@ -7,7 +10,10 @@
 <script setup lang="ts">
 import { IAtomsButtonSubProps } from '@interface/props';
 // Props
-const { text } = defineProps<IAtomsButtonSubProps>();
+const {
+  text,
+  onClickFunction,
+} = defineProps<IAtomsButtonSubProps>();
 </script>
 
 <style lang="scss" scoped>

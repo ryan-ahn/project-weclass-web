@@ -12,12 +12,6 @@
           :attrDisabled="confirmButtonDisabled"
           :onClickFunction="() => onClickRouteToStack(confirmButtonPath)"
         />
-        <AtomsButtonMain
-          type="B"
-          :text="cancelButtonText"
-          :attrDisabled="cancelButtonDisabled"
-          :onClickFunction="() => onClickRouteToStack(cancelButtonPath)"
-        />
       </div>
     </div>
   </section>
@@ -34,9 +28,6 @@ const contentDescription = CONTENT_PAGE.main.description;
 const confirmButtonText = BUTTON_MAIN.main.A.text;
 const confirmButtonDisabled = BUTTON_MAIN.main.A.disabled;
 const confirmButtonPath = BUTTON_MAIN.main.A.path;
-const cancelButtonText = BUTTON_MAIN.main.B.text;
-const cancelButtonDisabled = BUTTON_MAIN.main.B.disabled;
-const cancelButtonPath = BUTTON_MAIN.main.A.path;
 // functions
 const onClickRouteToStack = (path: string) => {
   router.push(path);
@@ -53,18 +44,19 @@ const onClickRouteToStack = (path: string) => {
   @include flexSet(center, center, column);
   @include boxSet(100%, 100%, 0px);
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .title-box {
   @include flexSet(center, center, column);
-  gap: 10px;
+  gap: 20px;
   padding: 50px;
   & > h1 {
-    @include fontSet(100px, 700, 110px);
+    @include fontSet(80px, 900, 100px);
+    text-align: center;
     white-space: pre-wrap;
   }
   & > p {
-    @include fontSet(16px, 100, 30px);
+    @include fontSet(16px, 100, 25px);
     text-align: center;
     white-space: pre-wrap;
   }

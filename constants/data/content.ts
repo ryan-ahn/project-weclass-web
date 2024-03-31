@@ -1,7 +1,7 @@
 export const CONTENT_PAGE = {
   main: {
-    title: '우리교실\nSTART',
-    description: '다른 페이지로 이동 하시겠습니까?\nSSR에서 페이지 트랜지션을 경험해 보세요.',
+    title: '우리교실 한국어\n단어 맞추기',
+    description: '이경미 선생님과\n놀이를 시작해 보세요!',
   },
   fist: {
     title: '다음 페이지입니다.',

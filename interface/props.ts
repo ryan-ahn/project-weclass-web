@@ -9,4 +9,10 @@ export interface IAtomsButtonMainProps {
 
 export interface IAtomsButtonSubProps {
   text: string,
+  onClickFunction: () => void,
+}
+
+export interface IMoleculesNavigatorGnbProps {
+  buttonText: string,
+  buttonClickFunction: () => void,
 }
