@@ -3,6 +3,15 @@
     <div class="content-box">
       <div class="question-box">
         <h1>{{ questionList[0].question }}</h1>
+        <div class="picture-box">
+          <img
+            :src="questionList[0].picture"
+            alt="picture"
+          >
+        </div>
+        <ul>
+          <li :v-for="questionList[0].question"/>
+        </ul>
       </div>
     </div>
   </section>
@@ -32,11 +41,19 @@ const questionList = ref(QUESTION_LIST);
 }
 .question-box {
   @include flexSet(center, center, column);
-  gap: 10px;
-  padding: 50px;
+  gap: 50px;
+  padding: 40px;
   & > h1 {
-    @include fontSet(100px, 700, 110px);
+    @include fontSet(50px, 700, 60px);
+    text-align: center;
     white-space: pre-wrap;
+  }
+}
+.picture-box {
+  @include flexSet(center, center, column);
+  @include boxSet(300px, 300px, 0px);
+  & > img {
+    object-fit: contain;
   }
 }
 </style>
