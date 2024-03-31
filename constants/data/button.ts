@@ -1,15 +1,17 @@
 export const BUTTON_MAIN = {
   main: {
-    A: {
+    start: {
       text: '시작하기',
+      option: 'large',
       disabled: false,
-      path: '/first',
+      path: '/word',
     },
   },
 };
 
 export const BUTTON_SUB = {
   gnb: {
-    text: '홈으로',
+    text: '처음부터',
+    option: 'medium',
   },
 };

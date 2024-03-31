@@ -8,12 +8,12 @@
 </template>
 
 <script setup lang="ts">
-import { IAtomsButtonSubProps } from '@interface/props';
+import { IAtomsButtonPrimaryProps } from '@interface/props';
 // Props
 const {
   text,
   onClickFunction,
-} = defineProps<IAtomsButtonSubProps>();
+} = defineProps<IAtomsButtonPrimaryProps>();
 </script>
 
 <style lang="scss" scoped>

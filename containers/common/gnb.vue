@@ -1,6 +1,8 @@
 <template>
   <MoleculesNavigatorGnb
+    logoUrl="/favicon.png"
     :buttonText="buttonText"
+    :logoClickFunction="onClickRouteToMain"
     :buttonClickFunction="onClickRouteToMain"
   />
 </template>

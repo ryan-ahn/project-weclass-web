@@ -6,11 +6,11 @@
         <p>{{ contentDescription }}</p>
       </div>
       <div class="button-box">
-        <AtomsButtonMain
+        <AtomsButtonBasic
           type="A"
-          :text="confirmButtonText"
-          :attrDisabled="confirmButtonDisabled"
-          :onClickFunction="() => onClickRouteToStack(confirmButtonPath)"
+          :text="startButtonText"
+          :attrDisabled="startButtonDisabled"
+          :onClickFunction="() => onClickRouteToStack(startButtonPath)"
         />
       </div>
     </div>
@@ -25,9 +25,9 @@ const router = useRouter();
 // variable
 const contentTitle = CONTENT_PAGE.main.title;
 const contentDescription = CONTENT_PAGE.main.description;
-const confirmButtonText = BUTTON_MAIN.main.A.text;
-const confirmButtonDisabled = BUTTON_MAIN.main.A.disabled;
-const confirmButtonPath = BUTTON_MAIN.main.A.path;
+const startButtonText = BUTTON_MAIN.main.start.text;
+const startButtonDisabled = BUTTON_MAIN.main.start.disabled;
+const startButtonPath = BUTTON_MAIN.main.start.path;
 // functions
 const onClickRouteToStack = (path: string) => {
   router.push(path);
@@ -56,7 +56,7 @@ const onClickRouteToStack = (path: string) => {
     white-space: pre-wrap;
   }
   & > p {
-    @include fontSet(16px, 100, 25px);
+    @include fontSet(18px, 100, 25px);
     text-align: center;
     white-space: pre-wrap;
   }

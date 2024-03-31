@@ -4,7 +4,10 @@
 
 <script setup lang="ts">
 import MainContainer from '@containers/main/index.vue';
-import { META_PAGE } from '@constants/data/meta';
+import {
+  META_PAGE,
+  META_COMMON,
+} from '@constants/data/meta';
 
 // Meta
 useHead({
@@ -24,7 +27,7 @@ useSeoMeta({
   ogTitle: META_PAGE.default.page_title,
   description: META_PAGE.default.page_description,
   ogDescription: META_PAGE.default.page_description,
-  ogImage: META_PAGE.default.page_image,
+  ogImage: META_COMMON.site_image,
   twitterCard: 'summary_large_image',
 });
 // Layout

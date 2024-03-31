@@ -279,19 +279,12 @@ button {
 
 @keyframes fade-in {
   0% {
-    visibility: hidden;
     opacity: 0;
-  }
-  50% {
-    visibility: hidden;
-    opacity: 0;
-  }
-  60% {
-    display: block;
+    transform: translateY(-10px);
   }
   100% {
-    visibility: visible;
     opacity: 1;
+    transform: translateY(0);
   }
 }
 

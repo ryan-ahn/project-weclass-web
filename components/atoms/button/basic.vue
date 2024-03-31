@@ -16,14 +16,14 @@
 </template>
 
 <script setup lang="ts">
-import { IAtomsButtonMainProps } from '@interface/props';
+import { IAtomsButtonBasicProps } from '@interface/props';
 // Props
 const {
   type,
   text,
   attrDisabled,
   onClickFunction,
-} = defineProps<IAtomsButtonMainProps>();
+} = defineProps<IAtomsButtonBasicProps>();
 </script>
 
 <style lang="scss" scoped>

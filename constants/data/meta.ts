@@ -1,22 +1,20 @@
 export const META_COMMON = {
-  site_name: '사이트 이름',
-  site_description: '사이트 설명',
-  site_keyword: '키워드1,키워드2,키워드3',
-  site_url: '',
-  site_image: '',
+  site_name: '우리교실 한국어',
+  site_description: '이경미 선생님의 우리교실 실습 게임',
+  site_keyword: '우리교실, 한국어, 이경미, 게임, 실습, 워크북, 초등, 중등, 성인, 한국어강의',
+  site_url: 'https://we-class.me',
+  site_image: 'https://storage.googleapis.com/ryan-ahn.appspot.com/public/weclass-ogimage.png',
 };
 
 export const META_PAGE = {
   default: {
-    page_title: '기본 페이지 타이틀',
-    page_description: '기본 페이지 설명',
-    page_cannonical_link: '',
-    page_image: '',
+    page_title: '우리교실 한국어',
+    page_description: '이경미 선생님의 우리교실 실습 게임',
+    page_cannonical_link: 'https://we-class.me',
   },
-  firstPage: {
-    page_title: '첫번째 페이지 타이틀',
-    page_description: '첫번째 페이지 설명',
-    page_cannonical_link: '/lounge',
-    page_image: '',
+  word: {
+    page_title: '우리교실 한국어 | 낱말 맞추기',
+    page_description: '이경미 선생님의 우리교실 낱말 맞추기 게임',
+    page_cannonical_link: 'https://we-class.me/word',
   },
 };
