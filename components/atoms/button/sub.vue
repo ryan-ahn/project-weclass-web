@@ -16,7 +16,7 @@ const { text } = defineProps<IAtomsButtonSubProps>();
   @include boxSet(auto, auto, 40px);
   padding: 8px 16px;
   cursor: pointer;
-  background-color: #2d8ef7;
+  background-color: #d34f33;
   &:hover {
     opacity: 0.9;
   }

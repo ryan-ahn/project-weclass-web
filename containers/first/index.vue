@@ -28,4 +28,3 @@ const contentTitle = CONTENT_PAGE.fist.title;
   }
 }
 </style>
-constants/data/content

@@ -1,22 +1,24 @@
 <template>
   <section class="page-wrapper">
-    <div class="title-box">
-      <h1>{{ contentTitle }}</h1>
-      <p>{{ contentDescription }}</p>
-    </div>
-    <div class="button-box">
-      <AtomsButtonMain
-        type="A"
-        :text="confirmButtonText"
-        :attrDisabled="confirmButtonDisabled"
-        :onClickFunction="() => onClickRouteToStack(confirmButtonPath)"
-      />
-      <AtomsButtonMain
-        type="B"
-        :text="cancelButtonText"
-        :attrDisabled="cancelButtonDisabled"
-        :onClickFunction="() => onClickRouteToStack(cancelButtonPath)"
-      />
+    <div class="content-box">
+      <div class="title-box">
+        <h1>{{ contentTitle }}</h1>
+        <p>{{ contentDescription }}</p>
+      </div>
+      <div class="button-box">
+        <AtomsButtonMain
+          type="A"
+          :text="confirmButtonText"
+          :attrDisabled="confirmButtonDisabled"
+          :onClickFunction="() => onClickRouteToStack(confirmButtonPath)"
+        />
+        <AtomsButtonMain
+          type="B"
+          :text="cancelButtonText"
+          :attrDisabled="cancelButtonDisabled"
+          :onClickFunction="() => onClickRouteToStack(cancelButtonPath)"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -41,11 +43,17 @@ const onClickRouteToStack = (path: string) => {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .page-wrapper {
   @include flexSet(center, center, column);
   @include boxSet(100%, 100vh, 0px);
-  @include colorSet(white, #111111);
+  @include backgroundSet('/images/background.png', 'cover');
+}
+.content-box {
+  @include flexSet(center, center, column);
+  @include boxSet(100%, 100%, 0px);
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .title-box {
   @include flexSet(center, center, column);
@@ -66,4 +74,3 @@ const onClickRouteToStack = (path: string) => {
   gap: 10px;
 }
 </style>
-constants/data/contentconstants/data/button
