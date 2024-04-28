@@ -1,7 +1,10 @@
 <template>
   <section class="page-wrapper">
     <div class="content-box">
-      <div class="question-box">
+      <div
+        v-if="questionList"
+        class="question-box"
+      >
         <h1>{{ questionList[step].question }}</h1>
         <div class="picture-icon-box">
           <img
@@ -20,7 +23,10 @@
             >
           </div>
         </div>
-        <ul class="answer-list-box">
+        <ul
+          v-if="questionList"
+          class="answer-list-box"
+        >
           <li
             v-for="(answer, idx) in questionList[step].answerList"
             :key="idx"
@@ -35,14 +41,21 @@
 </template>
 
 <script setup lang="ts">
+import { IQuestion } from '@interface/data';
 import { TAnswerToggleAlias } from '@interface/alias';
 import { QUESTION_LIST } from '@constants/data/question';
 // ref
 const step = ref(0);
-const questionList = ref(QUESTION_LIST);
+const questionList = ref<IQuestion[] | null>(null);
+const answerList = ref<boolean[]>([]);
 const answerToggle = ref<TAnswerToggleAlias>('default');
 
 /** functions */
+const getRandomQuestionList = (items: IQuestion[], number: number) => {
+  const shuffled = items.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, number);
+};
+
 const onClickAnswer = (rightId: number, selectId: number) => {
   if (answerToggle.value !== 'default') {
     return;
@@ -59,12 +72,33 @@ const onDisplayIcon = (answerToggle: TAnswerToggleAlias) => {
   return '/icons/ic-shape-x.svg';
 };
 
+/** mount */
+onMounted(() => {
+  questionList.value = getRandomQuestionList(QUESTION_LIST, 10);
+});
+
 /** watch */
-watch(answerToggle, (value) => {
-  if (value) {
+watch([
+  answerToggle,
+  step,
+], (value) => {
+  if (value[0] === 'pass' && value[1] < 9) {
     setTimeout(() => {
+      answerList.value.push(true);
       answerToggle.value = 'default';
-    }, 2000);
+      step.value += 1;
+    }, 1500);
+  }
+  if (value[0] === 'fail' && value[1] < 9) {
+    setTimeout(() => {
+      answerList.value.push(false);
+      answerToggle.value = 'default';
+      step.value += 1;
+    }, 1500);
+  }
+  if (value[0] !== 'default' && value[1] >= 9) {
+    console.log(answerList.value);
+    console.log('마지막 문제에요!');
   }
 });
 </script>
