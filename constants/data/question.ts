@@ -1,13 +1,17 @@
 export const QUESTION_LIST = [{
   id: 0,
   type: 'picture-example',
-  question: '다음 그림에 맞는 낱말을 맞춰보세요!',
+  question: '그림에 맞는 글자를 찾으세요',
   picture: '/icons/word-apple.svg',
-  answer: '사과',
-  example: [
-    '사과',
-    '바나나',
-    '포도',
-    '딸기',
+  rightAnswer: '사과',
+  answerList: [
+    {
+      id: 0,
+      text: '사과',
+    },
+    {
+      id: 1,
+      text: '바나나',
+    },
   ],
 }];

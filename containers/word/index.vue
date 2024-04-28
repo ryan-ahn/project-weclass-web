@@ -2,15 +2,20 @@
   <section class="page-wrapper">
     <div class="content-box">
       <div class="question-box">
-        <h1>{{ questionList[0].question }}</h1>
+        <h1>{{ questionList[step].question }}</h1>
         <div class="picture-box">
           <img
-            :src="questionList[0].picture"
+            :src="questionList[step].picture"
             alt="picture"
           >
         </div>
-        <ul>
-          <li :v-for="questionList[0].question"/>
+        <ul class="answer-box">
+          <li
+            v-for="(answer, idx) in questionList[step].answerList"
+            :key="idx"
+          >
+            {{ answer.text }}
+          </li>
         </ul>
       </div>
     </div>
@@ -24,6 +29,7 @@ import { CONTENT_PAGE } from '@constants/data/content';
 const contentTitle = CONTENT_PAGE.word.title;
 // ref
 const questionList = ref(QUESTION_LIST);
+const step = ref(0);
 </script>
 
 <style lang="scss" scoped>
@@ -31,7 +37,9 @@ const questionList = ref(QUESTION_LIST);
   @include flexSet(center, center, column);
   @include boxSet(100%, 100vh, 0px);
   @include backgroundSet('/images/background.png', 'cover');
-  animation: fade-in 1s ease-out;
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
 }
 .content-box {
   @include flexSet(center, center, column);
@@ -43,17 +51,35 @@ const questionList = ref(QUESTION_LIST);
   @include flexSet(center, center, column);
   gap: 50px;
   padding: 40px;
+  animation: fade-in 1s ease-out;
   & > h1 {
-    @include fontSet(50px, 700, 60px);
+    @include fontSet(40px, 700, 48px);
     text-align: center;
     white-space: pre-wrap;
   }
 }
 .picture-box {
   @include flexSet(center, center, column);
-  @include boxSet(300px, 300px, 0px);
+  @include boxSet(250px, 250px, 0px);
   & > img {
     object-fit: contain;
+  }
+}
+.answer-box {
+  @include flexSet(center, center, row);
+  gap: 15px;
+  & > li {
+    @include flexSet(center, center, row);
+    @include boxSet(150px, 60px, 30px);
+    @include fontSet(22px, 900, 30px);
+    text-align: center;
+    white-space: pre-wrap;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid black;
+    &:hover {
+      background-color: #f1f1f1;
+    }
   }
 }
 </style>
