@@ -3,16 +3,28 @@
     <div class="content-box">
       <div class="question-box">
         <h1>{{ questionList[step].question }}</h1>
-        <div class="picture-box">
+        <div class="picture-icon-box">
           <img
             :src="questionList[step].picture"
-            alt="picture"
+            alt="picture-icon"
           >
         </div>
-        <ul class="answer-box">
+        <div
+          v-if="answerToggle !== 'default'"
+          class="answer-right-box"
+        >
+          <div class="answer-icon-box">
+            <img
+              :src="onDisplayIcon(answerToggle)"
+              alt="answer-icon"
+            >
+          </div>
+        </div>
+        <ul class="answer-list-box">
           <li
             v-for="(answer, idx) in questionList[step].answerList"
             :key="idx"
+            @click="onClickAnswer(questionList[step].answerId, answer.id)"
           >
             {{ answer.text }}
           </li>
@@ -23,13 +35,38 @@
 </template>
 
 <script setup lang="ts">
+import { TAnswerToggleAlias } from '@interface/alias';
 import { QUESTION_LIST } from '@constants/data/question';
-import { CONTENT_PAGE } from '@constants/data/content';
-// variable
-const contentTitle = CONTENT_PAGE.word.title;
 // ref
-const questionList = ref(QUESTION_LIST);
 const step = ref(0);
+const questionList = ref(QUESTION_LIST);
+const answerToggle = ref<TAnswerToggleAlias>('default');
+
+/** functions */
+const onClickAnswer = (rightId: number, selectId: number) => {
+  if (answerToggle.value !== 'default') {
+    return;
+  }
+  if (rightId === selectId) {
+    answerToggle.value = 'pass';
+    return;
+  }
+  answerToggle.value = 'fail';
+};
+
+const onDisplayIcon = (answerToggle: TAnswerToggleAlias) => {
+  if (answerToggle === 'pass') { return '/icons/ic-shape-o.svg'; }
+  return '/icons/ic-shape-x.svg';
+};
+
+/** watch */
+watch(answerToggle, (value) => {
+  if (value) {
+    setTimeout(() => {
+      answerToggle.value = 'default';
+    }, 2000);
+  }
+});
 </script>
 
 <style lang="scss" scoped>
@@ -49,6 +86,7 @@ const step = ref(0);
 }
 .question-box {
   @include flexSet(center, center, column);
+  position: relative;
   gap: 50px;
   padding: 40px;
   animation: fade-in 1s ease-out;
@@ -58,27 +96,44 @@ const step = ref(0);
     white-space: pre-wrap;
   }
 }
-.picture-box {
+.picture-icon-box {
   @include flexSet(center, center, column);
-  @include boxSet(250px, 250px, 0px);
   & > img {
-    object-fit: contain;
+    @include boxSet(250px, 250px, 0px);
   }
 }
-.answer-box {
+.answer-right-box {
+  @include flexSet(center, center, row);
+  @include boxSet(300px, 300px, 0px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  gap: 20px;
+  transform: translate(-50%, -50%);
+}
+.answer-icon-box {
+  @include flexSet(center, center, column);
+  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.3));
+  opacity: 0.9;
+  & > img {
+    @include boxSet(300px, 300px, 0px);
+  }
+}
+.answer-list-box {
   @include flexSet(center, center, row);
   gap: 15px;
   & > li {
     @include flexSet(center, center, row);
     @include boxSet(150px, 60px, 30px);
-    @include fontSet(22px, 900, 30px);
+    @include fontSet(24px, 900, 30px);
     text-align: center;
     white-space: pre-wrap;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.9);
-    border: 2px solid black;
+    border: 3px solid black;
     &:hover {
-      background-color: #f1f1f1;
+      background-color: #ffebeb;
     }
   }
 }
