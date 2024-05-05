@@ -115,7 +115,6 @@ watch([
 .content-box {
   @include flexSet(center, center, column);
   @include boxSet(100%, 100%, 0px);
-  padding: 20px;
   background-color: rgba(255, 255, 255, 0.9);
 }
 .question-box {

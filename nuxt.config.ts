@@ -81,10 +81,6 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap',
-        },
-        {
-          rel: 'stylesheet',
           type: 'text/css',
           href: 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css',
         },

@@ -51,7 +51,7 @@ const onClickRouteToStack = (path: string) => {
   gap: 20px;
   padding: 50px;
   & > h1 {
-    @include fontSet(80px, 900, 100px);
+    @include fontSet(80px, 700, 100px);
     text-align: center;
     white-space: pre-wrap;
   }
