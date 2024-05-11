@@ -69,7 +69,7 @@ const {
 }
 .answer-right-box {
   @include flexSet(center, center, row);
-  @include boxSet(300px, 300px, 0px);
+  @include boxSet(250px, 250px, 0px);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -81,7 +81,7 @@ const {
   @include flexSet(center, center, column);
   opacity: 0.9;
   & > img {
-    @include boxSet(300px, 300px, 0px);
+    @include boxSet(250px, 250px, 0px);
   }
 }
 .answer-list-box {
