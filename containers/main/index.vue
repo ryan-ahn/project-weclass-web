@@ -56,7 +56,7 @@ const onClickRouteToStack = (path: string) => {
     white-space: pre-wrap;
   }
   & > p {
-    @include fontSet(24px, 100, 32px);
+    @include fontSet(24px, 400, 32px);
     text-align: center;
     white-space: pre-wrap;
   }
