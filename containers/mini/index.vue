@@ -95,11 +95,19 @@ watch([
     min-height: -webkit-fill-available;
   }
 }
+.page-wrapper::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.9);
+}
 .content-box {
   @include flexSet(center, center, column);
   @include boxSet(100%, 100%, 0px);
-  min-height: 100%;
-  padding: 20px 0px;
-  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 2;
 }
 </style>
