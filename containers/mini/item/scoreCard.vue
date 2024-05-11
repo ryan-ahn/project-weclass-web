@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="score-box">
       <img
-        src="icons/ic-common-medal.svg"
+        src="/icons/ic-common-medal.svg"
         alt="medal"
       >
       <p>{{ roundNumber(score) }}점</p>
