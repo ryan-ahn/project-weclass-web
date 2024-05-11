@@ -101,8 +101,5 @@ watch([
   min-height: 100vh;
   padding: 20px 0px;
   background-color: rgba(255, 255, 255, 0.9);
-  @supports (-webkit-touch-callout: none) {
-    min-height: -webkit-fill-available;
-  }
 }
 </style>
