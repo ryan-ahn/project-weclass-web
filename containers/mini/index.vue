@@ -88,16 +88,17 @@ watch([
 <style lang="scss" scoped>
 .page-wrapper {
   @include flexSet(center, center, column);
-  @include boxSet(100%, 100vh, 0px);
+  @include boxSet(100%, auto, 0px);
   @include backgroundSet('/images/background.png', 'cover');
+
+}
+.content-box {
+  @include flexSet(center, center, column);
+  @include boxSet(100%, 100vh, 0px);
+  padding: 20px 0px;
   background-color: rgba(255, 255, 255, 0.9);
   @supports (-webkit-touch-callout: none) {
     height: -webkit-fill-available;
   }
-}
-.content-box {
-  @include flexSet(center, center, column);
-  @include boxSet(100%, 100%, 0px);
-  padding: 20px 0px;
 }
 </style>
