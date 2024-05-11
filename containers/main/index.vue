@@ -39,6 +39,7 @@ const onClickRouteToStack = (path: string) => {
   @include flexSet(center, center, column);
   @include boxSet(100%, 100vh, 0px);
   @include backgroundSet('/images/background.png', 'cover');
+  background-color: rgba(255, 255, 255, 0.9);
   @supports (-webkit-touch-callout: none) {
     height: -webkit-fill-available;
   }
@@ -47,7 +48,6 @@ const onClickRouteToStack = (path: string) => {
   @include flexSet(center, center, column);
   @include boxSet(100%, 100%, 0px);
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
 }
 .title-box {
   @include flexSet(center, center, column);

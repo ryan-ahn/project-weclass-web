@@ -90,6 +90,7 @@ watch([
   @include flexSet(center, center, column);
   @include boxSet(100%, 100vh, 0px);
   @include backgroundSet('/images/background.png', 'cover');
+  background-color: rgba(255, 255, 255, 0.9);
   @supports (-webkit-touch-callout: none) {
     height: -webkit-fill-available;
   }
@@ -97,6 +98,6 @@ watch([
 .content-box {
   @include flexSet(center, center, column);
   @include boxSet(100%, 100%, 0px);
-  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px 0px;
 }
 </style>
