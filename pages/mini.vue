@@ -9,7 +9,7 @@ import {
   META_COMMON,
 } from '@constants/data/meta';
 
-// Meta
+// meta
 useHead({
   title: META_PAGE.word.page_title,
   meta: [{
@@ -21,7 +21,7 @@ useHead({
     href: META_PAGE.word.page_cannonical_link,
   }],
 });
-// Seo Meta
+// seo meta
 useSeoMeta({
   title: META_PAGE.word.page_title,
   ogTitle: META_PAGE.word.page_title,
@@ -29,9 +29,5 @@ useSeoMeta({
   ogDescription: META_PAGE.word.page_description,
   ogImage: META_COMMON.site_image,
   twitterCard: 'summary_large_image',
-});
-// Layout
-definePageMeta({
-  layout: 'default',
 });
 </script>

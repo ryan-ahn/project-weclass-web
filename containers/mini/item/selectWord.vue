@@ -52,7 +52,7 @@ const {
 .wrapper {
   @include flexSet(center, center, column);
   position: relative;
-  gap: 50px;
+  gap: 30px;
   padding: 40px;
   animation: fade-in 1s ease-out;
   & > h1 {
@@ -64,7 +64,7 @@ const {
 .picture-icon-box {
   @include flexSet(center, center, column);
   & > img {
-    @include boxSet(250px, 250px, 0px);
+    @include boxSet(220px, 220px, 0px);
   }
 }
 .answer-right-box {
@@ -87,10 +87,10 @@ const {
 }
 .answer-list-box {
   @include flexSet(center, center, row);
-  gap: 15px;
+  gap: 10px;
   & > li {
     @include flexSet(center, center, row);
-    @include boxSet(150px, 60px, 30px);
+    @include boxSet(120px, 60px, 30px);
     @include fontSet(24px, 900, 30px);
     text-align: center;
     white-space: pre-wrap;
