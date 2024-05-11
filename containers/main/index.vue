@@ -39,6 +39,9 @@ const onClickRouteToStack = (path: string) => {
   @include flexSet(center, center, column);
   @include boxSet(100%, 100vh, 0px);
   @include backgroundSet('/images/background.png', 'cover');
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
 }
 .content-box {
   @include flexSet(center, center, column);
