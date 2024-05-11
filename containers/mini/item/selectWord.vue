@@ -79,7 +79,6 @@ const {
 }
 .answer-icon-box {
   @include flexSet(center, center, column);
-  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.3));
   opacity: 0.9;
   & > img {
     @include boxSet(300px, 300px, 0px);
