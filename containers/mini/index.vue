@@ -88,8 +88,12 @@ watch([
 <style lang="scss" scoped>
 .page-wrapper {
   @include flexSet(center, center, column);
-  @include boxSet(100%, auto, 0px);
+  @include boxSet(100%, 100%, 0px);
   @include backgroundSet('/images/background.png', 'cover');
+  min-height: 100vh;
+  @supports (-webkit-touch-callout: none) {
+    min-height: -webkit-fill-available;
+  }
 }
 .content-box {
   @include flexSet(center, center, column);
