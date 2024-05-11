@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="questionList"
-    class="question-box"
+    class="wrapper"
   >
     <h1>{{ questionList[step].question }}</h1>
     <div class="picture-icon-box">
@@ -49,7 +49,7 @@ const {
 
 <style lang='scss' scoped>
 
-.question-box {
+.wrapper {
   @include flexSet(center, center, column);
   position: relative;
   gap: 50px;

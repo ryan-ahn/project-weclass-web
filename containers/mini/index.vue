@@ -4,13 +4,19 @@
       v-if="questionList"
       class="content-box"
     >
-      <SelectWord
-        v-if="questionList[step].type === 'select-word'"
+      <SelectWordItem
+        v-if="step <= maxStep && questionList[step].type === 'select-word'"
         :step="step"
         :answerToggle="answerToggle"
         :questionList="questionList"
         :onDisplayIcon="onDisplayIcon"
         :onClickAnswer="onClickAnswer"
+      />
+      <ScoreCardItem
+        v-if="step > maxStep"
+        :score="passList.length / (passList.length + failList.length) * 100"
+        :passCount="passList.length"
+        :failCount="failList.length"
       />
     </div>
   </section>
@@ -19,13 +25,16 @@
 <script setup lang="ts">
 import { ISelectWordQuestionDto } from '@interface/dto';
 import { TAnswerToggleAlias } from '@interface/alias';
-import SelectWord from '@containers/mini/item/selectWord.vue';
+import SelectWordItem from '@containers/mini/item/selectWord.vue';
+import ScoreCardItem from '@containers/mini/item/scoreCard.vue';
 import { QUESTION_LIST } from '@constants/data/database';
 // ref
 const step = ref(0);
-const questionList = ref<ISelectWordQuestionDto[] | null>(null);
-const answerList = ref<boolean[]>([]);
+const maxStep = ref(19);
+const passList = ref<number[]>([]);
+const failList = ref<number[]>([]);
 const answerToggle = ref<TAnswerToggleAlias>('default');
+const questionList = ref<ISelectWordQuestionDto[] | null>(null);
 
 /** functions */
 const getRandomQuestionList = (items: ISelectWordQuestionDto[], number: number) => {
@@ -51,7 +60,7 @@ const onDisplayIcon = (answerToggle: TAnswerToggleAlias) => {
 
 /** mount */
 onMounted(() => {
-  questionList.value = getRandomQuestionList(QUESTION_LIST, 20);
+  questionList.value = getRandomQuestionList(QUESTION_LIST, maxStep.value + 1);
 });
 
 /** watch */
@@ -59,23 +68,19 @@ watch([
   answerToggle,
   step,
 ], (value) => {
-  if (value[0] === 'pass' && value[1] < 9) {
+  if (value[0] === 'pass' && value[1] <= maxStep.value) {
     setTimeout(() => {
-      answerList.value.push(true);
+      passList.value.push(step.value);
       answerToggle.value = 'default';
       step.value += 1;
     }, 1500);
   }
-  if (value[0] === 'fail' && value[1] < 9) {
+  if (value[0] === 'fail' && value[1] <= maxStep.value) {
     setTimeout(() => {
-      answerList.value.push(false);
+      failList.value.push(step.value);
       answerToggle.value = 'default';
       step.value += 1;
     }, 1500);
-  }
-  if (value[0] !== 'default' && value[1] >= 9) {
-    console.log(answerList.value);
-    console.log('마지막 문제에요!');
   }
 });
 </script>

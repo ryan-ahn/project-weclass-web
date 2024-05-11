@@ -2,7 +2,7 @@
   <button
     class="button-wrapper"
     :style="{
-      border: type === 'A' ? '0px' : '1px solid #252525',
+      border: type === 'A' ? '0px' : '2px solid #252525',
       background: type === 'A' ? '#252525' : 'white',
       opacity: attrDisabled ? 0.3 : 1,
     }"

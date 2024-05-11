@@ -1,6 +1,6 @@
-import { IQuestion } from '@interface/data';
+import { ISelectWordQuestionDto } from '@interface/dto';
 
-export const QUESTION_LIST: IQuestion[] = [
+export const QUESTION_LIST: ISelectWordQuestionDto[] = [
   {
     id: 0,
     type: 'select-word',
@@ -243,16 +243,118 @@ export const QUESTION_LIST: IQuestion[] = [
     id: 14,
     type: 'select-word',
     question: '그림에 맞는 글자를 찾으세요.',
-    picture: '/icons/ic-word-spoon.svg',
+    picture: '/icons/ic-word-book.svg',
     answerId: 0,
     answerList: [
       {
         id: 0,
-        text: '숟가락',
+        text: '책',
       },
       {
         id: 1,
-        text: '젓가락',
+        text: '채소',
+      },
+    ],
+  },
+  {
+    id: 15,
+    type: 'select-word',
+    question: '그림에 맞는 글자를 찾으세요.',
+    picture: '/icons/ic-word-basketball.svg',
+    answerId: 1,
+    answerList: [
+      {
+        id: 0,
+        text: '자동차',
+      },
+      {
+        id: 1,
+        text: '농구공',
+      },
+    ],
+  },
+  {
+    id: 16,
+    type: 'select-word',
+    question: '그림에 맞는 글자를 찾으세요.',
+    picture: '/icons/ic-word-clock.svg',
+    answerId: 1,
+    answerList: [
+      {
+        id: 0,
+        text: '냉장고',
+      },
+      {
+        id: 1,
+        text: '시계',
+      },
+    ],
+  },
+  {
+    id: 17,
+    type: 'select-word',
+    question: '그림에 맞는 글자를 찾으세요.',
+    picture: '/icons/ic-word-eagle.svg',
+    answerId: 1,
+    answerList: [
+      {
+        id: 0,
+        text: '독사',
+      },
+      {
+        id: 1,
+        text: '독수리',
+      },
+    ],
+  },
+  {
+    id: 18,
+    type: 'select-word',
+    question: '그림에 맞는 글자를 찾으세요.',
+    picture: '/icons/ic-word-hello.svg',
+    answerId: 1,
+    answerList: [
+      {
+        id: 0,
+        text: '얼굴',
+      },
+      {
+        id: 1,
+        text: '손',
+      },
+    ],
+  },
+  {
+    id: 19,
+    type: 'select-word',
+    question: '그림에 맞는 글자를 찾으세요.',
+    picture: '/icons/ic-word-toiletpaper.svg',
+    answerId: 0,
+    answerList: [
+      {
+        id: 0,
+        text: '휴지',
+      },
+      {
+        id: 1,
+        text: '아파트',
+      },
+    ],
+  },
+  {
+    id: 20,
+    type: 'select-word',
+    question: '그림에 맞는 글자를 찾으세요.',
+    picture: '/icons/ic-word-house.svg',
+    answerId: 0,
+    answerList: [
+      {
+        id: 0,
+        text: '집',
+      },
+      {
+        id: 1,
+        text: '나라',
       },
     ],
   },

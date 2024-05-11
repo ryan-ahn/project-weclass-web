@@ -32,3 +32,9 @@ export interface IMiniItemSelectWordProps {
   onDisplayIcon: (answerToggle: TAnswerToggleAlias) => string,
   onClickAnswer: (rightId: number, selectId: number) => void,
 }
+
+export interface IMiniItemScoreCardProps {
+  score: number,
+  passCount: number,
+  failCount: number,
+}

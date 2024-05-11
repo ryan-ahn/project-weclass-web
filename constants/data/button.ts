@@ -7,6 +7,14 @@ export const BUTTON_MAIN = {
       path: '/mini',
     },
   },
+  mini: {
+    scoreCard: {
+      text: '홈으로',
+      option: 'large',
+      disabled: false,
+      path: '/',
+    },
+  },
 };
 
 export const BUTTON_SUB = {
