@@ -1,5 +1,10 @@
-import { TMainButtonAlias } from '@interface/alias';
+import { ISelectWordQuestionDto } from '@interface/dto';
+import {
+  TAnswerToggleAlias,
+  TMainButtonAlias,
+} from '@interface/alias';
 
+// components
 export interface IAtomsButtonBasicProps {
   type: TMainButtonAlias,
   text: string,
@@ -17,4 +22,13 @@ export interface IMoleculesNavigatorGnbProps {
   buttonText: string,
   logoClickFunction: () => void,
   buttonClickFunction: () => void,
+}
+
+// containers
+export interface IMiniItemSelectWordProps {
+  step: number,
+  answerToggle: TAnswerToggleAlias,
+  questionList: ISelectWordQuestionDto[],
+  onDisplayIcon: (answerToggle: TAnswerToggleAlias) => string,
+  onClickAnswer: (rightId: number, selectId: number) => void,
 }

@@ -4,7 +4,7 @@ export const BUTTON_MAIN = {
       text: '시작하기',
       option: 'large',
       disabled: false,
-      path: '/word',
+      path: '/mini',
     },
   },
 };

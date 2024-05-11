@@ -1,9 +1,9 @@
 <template>
-  <WordContainer/>
+  <MiniContainer/>
 </template>
 
 <script setup lang="ts">
-import WordContainer from '@containers/word/index.vue';
+import MiniContainer from '@containers/mini/index.vue';
 import {
   META_PAGE,
   META_COMMON,

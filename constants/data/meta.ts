@@ -13,7 +13,7 @@ export const META_PAGE = {
     page_cannonical_link: 'https://we-class.me',
   },
   word: {
-    page_title: '우리교실 한국어 | 낱말 맞추기',
+    page_title: '우리교실 한국어 | 미니 게임',
     page_description: '이경미 선생님의 우리교실 낱말 맞추기 게임',
     page_cannonical_link: 'https://we-class.me/word',
   },

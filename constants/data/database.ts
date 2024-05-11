@@ -239,4 +239,21 @@ export const QUESTION_LIST: IQuestion[] = [
       },
     ],
   },
+  {
+    id: 14,
+    type: 'select-word',
+    question: '그림에 맞는 글자를 찾으세요.',
+    picture: '/icons/ic-word-spoon.svg',
+    answerId: 0,
+    answerList: [
+      {
+        id: 0,
+        text: '숟가락',
+      },
+      {
+        id: 1,
+        text: '젓가락',
+      },
+    ],
+  },
 ];
