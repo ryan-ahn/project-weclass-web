@@ -1,4 +1,4 @@
-# We-Class Game Web
+# We-Class Mini Game
 
 <img src="https://storage.googleapis.com/ryan-ahn.appspot.com/public/weclass-service.png" alt="thumbnail"/>
 
