@@ -3,7 +3,9 @@
     v-if="questionList"
     class="wrapper"
   >
-    <h1>{{ questionList[step].question }}</h1>
+    <h1 v-if="imageLoaded">
+      {{ questionList[step].question }}
+    </h1>
     <div class="picture-icon-box">
       <img
         :src="questionList[step].picture"
@@ -24,7 +26,7 @@
       </div>
     </div>
     <ul
-      v-if="questionList && imageLoaded"
+      v-if="imageLoaded"
       class="answer-list-box"
     >
       <li
