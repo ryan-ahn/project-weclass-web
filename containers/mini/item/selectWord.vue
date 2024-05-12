@@ -3,7 +3,7 @@
     v-if="questionList"
     class="wrapper"
   >
-    <h1 v-if="imageLoaded">
+    <h1>
       {{ questionList[step].question }}
     </h1>
     <div class="picture-icon-box">
@@ -26,10 +26,7 @@
         >
       </div>
     </div>
-    <ul
-      v-if="imageLoaded"
-      class="answer-list-box"
-    >
+    <ul class="answer-list-box">
       <li
         v-for="(answer, idx) in questionList[step].answerList"
         :key="idx"
