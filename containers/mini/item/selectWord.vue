@@ -10,8 +10,9 @@
       <img
         :src="questionList[step].picture"
         alt="picture-icon"
+        @loadstart="onImageLoading"
         @load="onImageLoaded"
-        @error="onImageError"
+        @error="onImageLoading"
       >
     </div>
     <div
@@ -55,7 +56,7 @@ const imageLoaded = ref(false);
 const onImageLoaded = () => {
   imageLoaded.value = true;
 };
-const onImageError = () => {
+const onImageLoading = () => {
   imageLoaded.value = false;
 };
 </script>
