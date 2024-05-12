@@ -1,9 +1,9 @@
-# We-Class Game Web
+# WeClass Mini Game Web Service
 
+<img src="https://storage.googleapis.com/ryan-ahn.appspot.com/public/weclass-service.png" alt="thumbnail"/>
 
 ## Introduction
 
-- 
 - Summary: 우리교실 한국어 실습 게임을 위한 프로젝트
 - Developer: Ryan(github.com/ryan-ahn)
 - Service: [링크](https://we-class.me)
