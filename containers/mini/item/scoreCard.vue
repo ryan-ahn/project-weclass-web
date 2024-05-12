@@ -22,6 +22,12 @@ import { IMiniItemScoreCardProps } from '@interface/props';
 import { BUTTON_MAIN } from '@constants/data/button';
 // Hooks
 const router = useRouter();
+// Props
+const {
+  score,
+  passCount,
+  failCount,
+} = defineProps<IMiniItemScoreCardProps>();
 // variables
 const startButtonText = BUTTON_MAIN.mini.scoreCard.text;
 const startButtonDisabled = BUTTON_MAIN.mini.scoreCard.disabled;
@@ -30,12 +36,6 @@ const startButtonPath = BUTTON_MAIN.mini.scoreCard.path;
 const onClickRouteToStack = (path: string) => {
   router.push(path);
 };
-// Props
-const {
-  score,
-  passCount,
-  failCount,
-} = defineProps<IMiniItemScoreCardProps>();
 </script>
 
 <style lang='scss' scoped>

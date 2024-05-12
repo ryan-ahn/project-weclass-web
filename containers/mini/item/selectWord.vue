@@ -8,6 +8,8 @@
       <img
         :src="questionList[step].picture"
         alt="picture-icon"
+        @load="onImageLoaded"
+        @error="onImageError"
       >
     </div>
     <div
@@ -22,7 +24,7 @@
       </div>
     </div>
     <ul
-      v-if="questionList"
+      v-if="questionList && imageLoaded"
       class="answer-list-box"
     >
       <li
@@ -45,6 +47,15 @@ const {
   questionList,
   onDisplayIcon,
 } = defineProps<IMiniItemSelectWordProps>();
+// ref
+const imageLoaded = ref(false);
+// functions
+const onImageLoaded = () => {
+  imageLoaded.value = true;
+};
+const onImageError = () => {
+  imageLoaded.value = false;
+};
 </script>
 
 <style lang='scss' scoped>
