@@ -1,4 +1,7 @@
-import { ISelectWordQuestionDto } from '@interface/dto';
+import {
+  ISelectImageQuestionDto,
+  ISelectWordQuestionDto,
+} from '@interface/dto';
 import {
   TAnswerToggleAlias,
   TMainButtonAlias,
@@ -29,6 +32,14 @@ export interface IMiniItemSelectWordProps {
   step: number,
   answerToggle: TAnswerToggleAlias,
   questionList: ISelectWordQuestionDto[],
+  onDisplayIcon: (answerToggle: TAnswerToggleAlias) => string,
+  onClickAnswer: (rightId: number, selectId: number) => void,
+}
+
+export interface IMiniItemSelectImageProps {
+  step: number,
+  answerToggle: TAnswerToggleAlias,
+  questionList: ISelectImageQuestionDto[],
   onDisplayIcon: (answerToggle: TAnswerToggleAlias) => string,
   onClickAnswer: (rightId: number, selectId: number) => void,
 }

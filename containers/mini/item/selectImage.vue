@@ -3,17 +3,13 @@
     v-if="questionList"
     class="wrapper"
   >
-    <h1>
-      {{ questionList[step].question }}
-    </h1>
-    <div class="picture-icon-box">
-      <img
-        :src="questionList[step].picture"
-        alt="picture-icon"
-        @loadstart="onImageLoading"
-        @load="onImageLoaded"
-        @error="onImageLoading"
-      >
+    <div class="question-box">
+      <h1>
+        {{ questionList[step].question }}
+      </h1>
+      <p>
+        {{ questionList[step].word }}
+      </p>
     </div>
     <div
       v-if="answerToggle !== 'default'"
@@ -32,30 +28,24 @@
         :key="idx"
         @click="onClickAnswer(questionList[step].answerId, answer.id)"
       >
-        {{ answer.text }}
+        <img
+          :src="answer.image"
+          alt="image"
+        >
       </li>
     </ul>
   </div>
 </template>
 
 <script setup lang='ts'>
-import { IMiniItemSelectWordProps } from '@interface/props';
+import { IMiniItemSelectImageProps } from '@interface/props';
 // Props
 const {
   step,
   answerToggle,
   questionList,
   onDisplayIcon,
-} = defineProps<IMiniItemSelectWordProps>();
-// ref
-const imageLoaded = ref(false);
-// functions
-const onImageLoaded = () => {
-  imageLoaded.value = true;
-};
-const onImageLoading = () => {
-  imageLoaded.value = false;
-};
+} = defineProps<IMiniItemSelectImageProps>();
 </script>
 
 <style lang='scss' scoped>
@@ -63,18 +53,22 @@ const onImageLoading = () => {
 .wrapper {
   @include flexSet(center, center, column);
   position: relative;
-  gap: 30px;
+  gap: 25px;
   padding: 40px 20px;
+}
+.question-box {
+  @include flexSet(center, center, column);
+  gap: 25px;
   & > h1 {
     @include fontSet(40px, 700, 48px);
     text-align: center;
     white-space: pre-wrap;
   }
-}
-.picture-icon-box {
-  @include flexSet(center, center, column);
-  & > img {
-    @include boxSet(220px, 220px, 0px);
+  & > p {
+    @include fontSet(55px, 700, 65px);
+    color: #d45033;
+    text-align: center;
+    white-space: pre-wrap;
   }
 }
 .answer-right-box {
@@ -99,13 +93,14 @@ const onImageLoading = () => {
   gap: 10px;
   & > li {
     @include flexSet(center, center, row);
-    @include boxSet(120px, 60px, 30px);
-    @include fontSet(24px, 900, 30px);
-    text-align: center;
-    white-space: pre-wrap;
+    @include boxSet(150px, 200px, 30px);
+    padding: 15px;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.9);
     border: 3px solid black;
+    & > img {
+      @include boxSet(100%, 100%, 30px);
+    }
   }
 }
 </style>

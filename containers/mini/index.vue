@@ -8,7 +8,15 @@
         v-if="step <= maxStep && questionList[step].type === 'select-word'"
         :step="step"
         :answerToggle="answerToggle"
-        :questionList="questionList"
+        :questionList="questionList as ISelectWordQuestionDto[]"
+        :onDisplayIcon="onDisplayIcon"
+        :onClickAnswer="onClickAnswer"
+      />
+      <SelectImageItem
+        v-if="step <= maxStep && questionList[step].type === 'select-image'"
+        :step="step"
+        :answerToggle="answerToggle"
+        :questionList="questionList as ISelectImageQuestionDto[]"
         :onDisplayIcon="onDisplayIcon"
         :onClickAnswer="onClickAnswer"
       />
@@ -23,22 +31,33 @@
 </template>
 
 <script setup lang="ts">
-import { ISelectWordQuestionDto } from '@interface/dto';
+import {
+  ISelectImageQuestionDto,
+  ISelectWordQuestionDto,
+} from '@interface/dto';
 import { TAnswerToggleAlias } from '@interface/alias';
 import SelectWordItem from '@containers/mini/item/selectWord.vue';
+import SelectImageItem from '@containers/mini/item/selectImage.vue';
 import ScoreCardItem from '@containers/mini/item/scoreCard.vue';
-import { QUESTION_LIST } from '@constants/data/database';
+import {
+  QUESTION_WORD,
+  QUESTION_IMAGE,
+} from '@constants/data/database';
 // ref
 const step = ref(0);
 const maxStep = ref(19);
 const passList = ref<number[]>([]);
 const failList = ref<number[]>([]);
 const answerToggle = ref<TAnswerToggleAlias>('default');
-const questionList = ref<ISelectWordQuestionDto[] | null>(null);
+const questionList = ref<Array<ISelectWordQuestionDto | ISelectImageQuestionDto> | null>(null);
 
 /** functions */
-const getRandomQuestionList = (items: ISelectWordQuestionDto[], number: number) => {
-  const shuffled = items.sort(() => 0.5 - Math.random());
+const getRandomQuestionList = (wordItems: ISelectWordQuestionDto[], imageItems: ISelectImageQuestionDto[], number: number) => {
+  const combinedItems = [
+    ...wordItems,
+    ...imageItems,
+  ];
+  const shuffled = combinedItems.sort(() => 0.5 - Math.random());
   return shuffled.slice(0, number);
 };
 
@@ -60,7 +79,7 @@ const onDisplayIcon = (answerToggle: TAnswerToggleAlias) => {
 
 /** mount */
 onMounted(() => {
-  questionList.value = getRandomQuestionList(QUESTION_LIST, maxStep.value + 1);
+  questionList.value = getRandomQuestionList(QUESTION_WORD, QUESTION_IMAGE, maxStep.value + 1);
 });
 
 /** watch */
@@ -109,5 +128,6 @@ watch([
   @include flexSet(center, center, column);
   @include boxSet(100%, 100%, 0px);
   z-index: 2;
+  animation: fade-in 1s ease-out;
 }
 </style>

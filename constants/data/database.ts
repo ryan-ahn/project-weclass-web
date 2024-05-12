@@ -1,6 +1,9 @@
-import { ISelectWordQuestionDto } from '@interface/dto';
+import {
+  ISelectImageQuestionDto,
+  ISelectWordQuestionDto,
+} from '@interface/dto';
 
-export const QUESTION_LIST: ISelectWordQuestionDto[] = [
+export const QUESTION_WORD: ISelectWordQuestionDto[] = [
   {
     id: 0,
     type: 'select-word',
@@ -355,6 +358,77 @@ export const QUESTION_LIST: ISelectWordQuestionDto[] = [
       {
         id: 1,
         text: '나라',
+      },
+    ],
+  },
+];
+
+export const QUESTION_IMAGE: ISelectImageQuestionDto[] = [
+  {
+    id: 50,
+    type: 'select-image',
+    question: '알맞은 사진을 고르세요.',
+    word: '사과',
+    answerId: 0,
+    answerList: [
+      {
+        id: 0,
+        image: '/icons/ic-word-apple.svg',
+      },
+      {
+        id: 1,
+        image: '/icons/ic-word-banana.svg',
+      },
+    ],
+  },
+  {
+    id: 51,
+    type: 'select-image',
+    question: '알맞은 사진을 고르세요.',
+    word: '당근',
+    answerId: 0,
+    answerList: [
+      {
+        id: 0,
+        image: '/icons/ic-word-carrot.svg',
+      },
+      {
+        id: 1,
+        image: '/icons/ic-word-hello.svg',
+      },
+    ],
+  },
+  {
+    id: 52,
+    type: 'select-image',
+    question: '알맞은 사진을 고르세요.',
+    word: '카메라',
+    answerId: 0,
+    answerList: [
+      {
+        id: 0,
+        image: '/icons/ic-word-camera.svg',
+      },
+      {
+        id: 1,
+        image: '/icons/ic-word-house.svg',
+      },
+    ],
+  },
+  {
+    id: 53,
+    type: 'select-image',
+    question: '알맞은 사진을 고르세요.',
+    word: '시계',
+    answerId: 0,
+    answerList: [
+      {
+        id: 0,
+        image: '/icons/ic-word-clock.svg',
+      },
+      {
+        id: 1,
+        image: '/icons/ic-word-book.svg',
       },
     ],
   },

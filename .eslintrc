@@ -191,6 +191,7 @@
     "vue/no-setup-props-destructure": [
       "off"
     ],
+    "vue/max-len": "off",
     "newline/import-module": [
       "error",
       {
